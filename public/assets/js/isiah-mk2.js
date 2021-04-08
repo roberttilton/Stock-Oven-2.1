@@ -1,4 +1,4 @@
-fetch("assets/txt/stock_symbols.txt")
+fetch("/public/assets/txt/stock_symbols.txt")
 	.then(response => response.text())
 	.then(
 		data => {

@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs')
 const router = require('express').Router();
 const {
-    User , Dates
-} = require('../../models');
+    User 
+} = require('../../models/User');
 
 // URL: /api/user
 console.log('about to invoke user routes');

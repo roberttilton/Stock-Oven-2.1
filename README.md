@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# StockOven
+Goal
+- Create an interactive program that pulls stock information from the Reddit forum r/wallstreetbets and compares them to a live stock chart pulled from Yahoo Finance. In addition, a chart is added to view the top 5 movers of the day.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+User Manual
+-First browse through the Reddit forum on the left and choose a stock that a user has posted. Furthermore, you can click on the post to navigate directly to it on Reddit in order to get more information.
 
-In the project directory, you can run:
+- Next, type in the abbreviation for the chosen stock in the search bar to the top right of the page. A suggestion bar is added for the user's convenience. 
 
-### `npm start`
+- Select your chosen stock and click on the "search" button.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- A chart of your stock will appear directly below showing recent activity for your chosen stock. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Below the graph is a box containing the top movers of the day.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Styles Used
+- Vanilla CSS
+- Bulma
+- Javascript
+- JQuery
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+API's Used
+- https://www.reddit.com/r/wallstreetbets/top.json'
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart?interval=5m&symbol=
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Creator Contributions
+- Krushil Naik
+    - Front-end development
+    - Code refactoring
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Robert Tilton
+    - Parse Wallsreetbets subreddit
+    - Add flare buttons to categorize Reddit posts
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Navid Ebrahimi
+    - Fetch Yahoo Finance API
+    - Display chart data to page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Isiah Feeley
+    - Develop auto-filling search bar 
+    - Attach search bar to search within Yahoo Finance API
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+[Deployed Link](https://krushilnaik.github.io/StockOven/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Built with Visual Studio Code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+

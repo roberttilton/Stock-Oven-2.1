@@ -1,0 +1,165 @@
+/* Reddit posts */
+
+#reddit-container {
+	max-width: 100%;
+	padding: 3%;
+	display: flex;
+	flex-direction: column;
+}
+
+#reddit {
+	display: flex;
+	flex-direction: column;
+	gap: 1%;
+	overflow-x: hidden;
+	height: 100%;
+	max-height: 100%;
+	max-width: 100%;
+	border-radius: 7px;
+	padding-top: 0%;
+	color: white;
+}
+
+.no-reddit {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	justify-self: center;
+	margin: auto;
+	color: #dddddd;
+}
+
+.no-reddit::before {
+	content: "";
+	background-image: url(https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Reddit_glyph_svg-512.png);
+	background-size: 100px;
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	filter: invert(0.75);
+}
+
+.no-reddit.tooltip::after {
+	content: "Click a flair up top to see their trending posts";
+}
+
+.no-reddit::after {
+	content: attr(data-dead-flair);
+	margin-top: 5%;
+}
+
+
+.reddit-post {
+	color: inherit;
+	position: relative;
+	font-family: Newsreader, serif;
+	background-color: #d84e4e;
+	border: none;
+	border-radius: 7px;
+	transition: .35s;
+	text-align: left;
+	max-width: 1000px;
+	padding: .3em 10em .25em 2.8em;
+}
+
+.reddit-post::before {
+	content: "";
+	display: inline-block;
+	background-image: url(https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Reddit_glyph_svg-512.png);
+	background-size: 2em;
+	height: 2em;
+	width: 2em;
+	position: absolute;
+	top: 50%;
+	left: .5%;
+	transition: filter .35s;
+	filter: invert(0);
+	transform: translate(0%, -50%);
+}
+
+.reddit-post:hover {
+	background-color: #ff6080;
+	cursor: pointer;
+}
+
+.reddit-post:hover::before {
+	filter: invert(0.9);
+}
+
+
+.post-title {
+	color: inherit;
+	background-color: rgba(0, 0, 0, 0.11);
+	width: min-content;
+	max-width: 80%;
+	border-radius: 7px;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 1%;
+	text-overflow: ellipsis;
+}
+
+.post-author {
+	color: rgba(255, 255, 255, 0.6);
+	font-size: .75em;
+	max-width: 5em;
+	overflow: hidden;
+	margin-left: 1.2%;
+}
+
+.post-score {
+	color: inherit;
+	background-color: #ffffff1e;
+	color: honeydew;
+	padding: .3%;
+	position: absolute;
+	right: 1%;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.post-score i {
+	color: #00bb6d;
+}
+
+.sort-buttons {
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.sort-button {
+	color: white;
+	font-size: 18px;
+	padding: .5% 1.5%;
+	border-radius: 20px;
+	border: none;
+	transition: .3s;
+	box-shadow: 0 0 3px #313131;
+}
+	.sort-button:hover {
+		filter: brightness(1.15);
+		cursor: pointer;
+		position: relative;
+	}
+		.sort-button:before {
+			opacity: 0%;
+			transition: .3s;
+			content: attr(data-tip);
+			text-align: center;
+			background-color: #42424288;
+			padding: 5%;
+			color: white;
+			position: absolute;
+			top: -60%;
+			width: max-content;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.sort-button:hover:before {
+			opacity: 100%;
+		}

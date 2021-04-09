@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<title>StockOven</title>
+
+		<link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+
+		<!-- External CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css" integrity="sha512-byErQdWdTqREz6DLAA9pCnLbdoGGhXfU6gm1c8bkf7F51JVmUBlayGe2A31VpXWQP+eiJ3ilTAZHCR3vmMyybA==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="/public/assets/css/normalize.css">
+
+		<!-- Internal CSS -->
+		<link rel="stylesheet" href="public/assets/css/style.css">
+		<link rel="stylesheet" href="public/assets/css/graph-component.css">
+		<link rel="stylesheet" href="/public/assets/css/reddit-component.css">
+
+	</head>
+
+	<body>
+		<nav class="notification is-primary">
+			<div class="left-side">
+				<img id="logo" src="public/assets/images/logo.png" alt="logo">
+				<h1>StockOven</h1>
+			</div>
+
+			<div class="search-widget">
+				<i class="fas fa-search" id="button" type="button"></i>
+				<input type="text" name="search" id="search"style="width: 250px; height: 33px;font: size 12px;pt;"  placeholder="Search stocks:">
+
+			</div>
+		</nav>
+
+		<div id="ranges">
+			<input type="radio" name="range" id="r-1d">
+			<input type="radio" name="range" id="r-5d" checked>
+			<input type="radio" name="range" id="r-1mo">
+		</div>
+
+		<div id="intervals">
+			<input type="radio" name="interval" id="i-5m">
+			<input type="radio" name="interval" id="i-15m">
+			<input type="radio" name="interval" id="i-60m" checked>
+			<input type="radio" name="interval" id="i-1d">
+		</div>
+
+		<main class="tile is-ancestor">
+			<div class="tile is-parent is-7">
+				<div class="tile notification is-danger" id="reddit-container">
+					<div class="sort-buttons">
+						<button class="sort-button" id="reddit-dd" type="button" style="background-color: #365b8c;" data-tip="Due Diligence">DD</button>
+						<button class="sort-button" id="reddit-gain" type="button" style="background-color: green;" data-tip="Reported gains">Gain</button>
+						<button class="sort-button" id="reddit-loss" type="button" style="background-color: crimson;" data-tip="Reported losses">Loss</button>
+						<button class="sort-button" id="reddit-news" type="button" style="background-color: goldenrod;" data-tip="Market news">News</button>
+						<button class="sort-button" id="reddit-yolo" type="button" style="background-color: cadetblue;" data-tip="Risky positions">YOLO</button>
+						<button class="sort-button" id="reddit-discussion" type="button" style="background-color: #b43fc4;" data-tip="Discussion">Discussion</button>
+						<button class="sort-button" id="reddit-chart" type="button" style="background-color: orangered;" data-tip="Chart">Chart</button>
+					</div>
+					<div id="reddit">
+						<div class="no-reddit tooltip"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tile is-parent is-vertical content">
+				<div id="stock-graph-container" class="tile notification is-light">
+					<div id="stock-graph"></div>
+					<div id="graph-controls">
+
+						<div id="range-labels">
+							<div id="range-ui"></div>
+							<div class="modes">
+								<label for="r-1d">1d</label>
+								<label for="r-5d">5d</label>
+								<label for="r-1mo">1mo</label>
+							</div>
+						</div>
+
+						<div id="interval-labels">
+							<div id="interval-ui"></div>
+							<div class="modes">
+								<label for="i-5m">5m</label>
+								<label for="i-15m">15m</label>
+								<label for="i-60m">60m</label>
+								<label for="i-1d">1d</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="top-movers-container" class="tile notification is-info">
+					Most active this Week:
+					<div id="top-movers">
+						<a class="mover-link">NVDA</a>
+						<a class="mover-link">TSLA</a>
+						<a class="mover-link">AMZN</a>
+						<a class="mover-link">GME</a>
+						<a class="mover-link">AMD</a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div class="contributors">Robert Tilton, Isiah Feeley, Navid Ebrahimi, Krushil Naik</div>
+
+		<!-- External JavaScript -->
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="assets/js/apexcharts.js"></script>
+
+		<!-- Internal JavaScript -->
+		<script src="public/assets/js/isiah-mk2.js"></script>
+		<script src="public/assets/js/navid.js"></script>
+		<script src="public/assets/js/robert.js"></script>
+		<script src="public/assets/js/krushil.js"></script>
+	</body>
+
+</html>

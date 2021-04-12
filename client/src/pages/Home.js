@@ -1,28 +1,19 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
-import Card from "../components/Card";
-import Form from "../components/Form";
-import Book from "../components/Book";
-import Footer from "../components/Footer";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
-import { List } from "../components/List";
 
-class Home extends Component {
-  state = {
-    books: [],
-    q: "",
-    message: "Search For A Book To Begin!",
-  };
+function Home() {
+  const [books, setBooks] = useState('1984');
+  const [q, setQ] = useState('');
+  const [message, setMessage] = useState('Reading is forever!');
 
-  handleInputChange = (event) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
   };
 
-  getBooks = () => {
+  const getBooks = () => {
     API.getBooks(this.state.q)
       .then((res) =>
         this.setState({

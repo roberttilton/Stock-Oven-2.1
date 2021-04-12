@@ -1,9 +1,15 @@
 const path = require("path");
 const router = require("express").Router();
 const userRoutes = require("./users");
+const redditRoutes = require("./reddit");
 
-// Book routes (endpoint: /api)
+// User routes 
+// endpoint: /api
 router.use("/users", userRoutes);
+
+// Reddit routes
+// endpoint: /api
+router.use("/reddit", redditRoutes);
 
 // For anything else, render the html page
 router.use(function(req, res) {

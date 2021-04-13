@@ -2,26 +2,25 @@ import React, { Component } from "react";
 import API from "../utils/API";
 
 function Home() {
-  const [books, setBooks] = useState('1984');
-  const [q, setQ] = useState('');
-  const [message, setMessage] = useState('Reading is forever!');
+  const [reddit, setReddit] = useState({
+    "DD": [],
+    "Gain": [],
+    "Loss": [],
+    "News": [],
+    "YOLO": [],
+    "Discussion": [],
+    "Chart": []
+  })
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  const getBooks = () => {
-    API.getBooks(this.state.q)
+  const getReddit = () => {
+    API.getReddit()
       .then((res) =>
-        this.setState({
-          books: res.data,
+        setReddit({
+          DD: 
         })
       )
       .catch(() =>
-        this.setState({
+        setState({
           books: [],
           message: "No New Books Found, Try a Different Query",
         })
@@ -30,7 +29,7 @@ function Home() {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.getBooks();
+    getBooks();
   };
 
   handleBookSave = (id) => {

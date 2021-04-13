@@ -90,86 +90,90 @@ function Home() {
             ) : (
               <h3>No Results to Display</h3>
             )}
-            {/* {reddit.Gain.length ? (
-              <List>
-                {reddit.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
+            {reddit.Gain.length ? (
+              <ul>
+                {reddit.Gain.map((post) => (
+                  <li>
+                        <p>{post.title}</p>
+                        <p>{post.author}</p>
+                        <p>{post.score}</p>
+                        <p>{post.link}</p>
+                  </li>
                 ))}
-              </List>
+              </ul>
             ) : (
               <h3>No Results to Display</h3>
             )}
             {reddit.Loss.length ? (
-              <List>
-                {reddit.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
+              <ul>
+                {reddit.Loss.map((post) => (
+                  <li>
+                        <p>{post.title}</p>
+                        <p>{post.author}</p>
+                        <p>{post.score}</p>
+                        <p>{post.link}</p>
+                  </li>
                 ))}
-              </List>
+              </ul>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+            {reddit.News.length ? (
+              <ul>
+                {reddit.News.map((post) => (
+                  <li>
+                        <p>{post.title}</p>
+                        <p>{post.author}</p>
+                        <p>{post.score}</p>
+                        <p>{post.link}</p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+            {reddit.YOLO.length ? (
+              <ul>
+                {reddit.YOLO.map((post) => (
+                  <li>
+                        <p>{post.title}</p>
+                        <p>{post.author}</p>
+                        <p>{post.score}</p>
+                        <p>{post.link}</p>
+                  </li>
+                ))}
+              </ul>
             ) : (
               <h3>No Results to Display</h3>
             )}
             {reddit["Daily Discussion"].length ? (
-              <List>
-                {reddit.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
+              <ul>
+              {reddit["Daily Discussion"].map((post) => (
+                <li>
+                      <p>{post.title}</p>
+                      <p>{post.author}</p>
+                      <p>{post.score}</p>
+                      <p>{post.link}</p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
+            {reddit.Chart.length ? (
+              <ul>
+                {reddit.Chart.map((post) => (
+                  <li>
+                        <p>{post.title}</p>
+                        <p>{post.author}</p>
+                        <p>{post.score}</p>
+                        <p>{post.link}</p>
+                  </li>
                 ))}
-              </List>
+              </ul>
             ) : (
               <h3>No Results to Display</h3>
             )}
-            {reddit.DD.length ? (
-              <List>
-                {reddit.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-            {reddit.DD.length ? (
-              <List>
-                {reddit.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )} */}
 					</div>
 				</div>
 			</div>

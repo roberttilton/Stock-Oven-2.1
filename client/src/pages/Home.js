@@ -8,23 +8,52 @@ function Home() {
     "Loss": [],
     "News": [],
     "YOLO": [],
-    "Discussion": [],
+    "Daily Discussion": [],
     "Chart": []
   })
 
   const getReddit = () => {
     API.getReddit()
-      .then((res) =>
+      .then((data) => {
+        const postObject = {
+          // "DD": [],
+          // "Gain": [],
+          // "Loss": [],
+          // "News": [],
+          // "YOLO": [],
+          // "Daily Discussion": [],
+          // "Chart": []
+        };
+        for (let i = 0; i < data.children.length; i++) {
+          const currentFlair = data.children[i].data.link_flair_text;
+          const dataObject = {};
+          if (data.children[i].data.title) {
+            dataObject["title"] = data.children[i].data.title
+          }
+          if (data.children[i].data.author) {
+            dataObject["author"] = data.children[i].data.author
+          }
+          if (data.children[i].data.permalink) {
+            dataObject["link"] = data.children[i].data.permalink
+          }
+          if (data.children[i].data.score) {
+            dataObject["score"] = data.children[i].data.score
+          }
+          if (Object.keys(postObject).includes(currentFlair)) {
+            postObject[currentFlair].push(dataObject);
+          }
+          console.log(dataObject);
+        }
+        console.log(postObject);
         setReddit({
-          DD: 
+          ...reddit,
+          ...postObject
         })
+      }
       )
-      .catch(() =>
-        setState({
-          books: [],
-          message: "No New Books Found, Try a Different Query",
-        })
-      );
+      .catch((err) => {
+        console.log(err)
+      });
   };
 
   handleFormSubmit = (event) => {

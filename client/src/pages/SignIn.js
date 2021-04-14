@@ -2,9 +2,6 @@ import React from "react";
 
 function signIn() {
 
-
-
-
     return (
     <div class="container">
     <div style="margin-top: 80px;" class="jumbotron text-center">

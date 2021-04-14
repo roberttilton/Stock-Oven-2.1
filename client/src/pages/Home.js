@@ -1,32 +1,23 @@
-import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
-import Card from "../components/Card";
-import Form from "../components/Form";
-import Book from "../components/Book";
-import Footer from "../components/Footer";
+import React, { Component, useState } from "react";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
-import { List } from "../components/List";
 
-class Home extends Component {
-  state = {
-    books: [],
-    q: "",
-    message: "Search For A Book To Begin!",
-  };
+function Home() {
+  const [reddit, setReddit] = useState({
+    "DD": [],
+	"Gain": [],
+	"Loss": [],
+	"News": [],
+	"YOLO": [],
+	"Discussion": [],
+	"Chart": []
+  })
+  
 
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  getBooks = () => {
-    API.getBooks(this.state.q)
+  getReddit = () => {
+    API.getReddit(state.q)
       .then((res) =>
-        this.setState({
-          books: res.data,
+        setReddit({
+          DD: 
         })
       )
       .catch(() =>

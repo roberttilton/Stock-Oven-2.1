@@ -9,7 +9,6 @@ router.use("/users", userRoutes);
 
 // Reddit routes
 // endpoint: /api
-
 router.use("/reddit", redditRoutes);
 
 // For anything else, render the html page

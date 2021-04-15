@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import API from "../utils/API";
-import { List, ListItem } from "../components/List"
+import { List, ListItem } from "../components/List";
 
 function Home() {
   const [reddit, setReddit] = useState({

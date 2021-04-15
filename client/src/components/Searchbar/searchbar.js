@@ -2,7 +2,8 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
-
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import getMuiTheme from '@material-ui/core/styles/getMuiTheme';
 
 function stockToSymbol(isoCode) {
   return typeof String.fromCodePoint !== 'undefined'
@@ -22,10 +23,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function stockSelect() {
+export default function StockSelect() {
   const classes = useStyles();
 
   return (
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
     <Autocomplete
       id="stock-select-demo"
       style={{ width: 300 }}
@@ -53,6 +55,7 @@ export default function stockSelect() {
         />
       )}
     />
+    </MuiThemeProvider>
   );
 }
 

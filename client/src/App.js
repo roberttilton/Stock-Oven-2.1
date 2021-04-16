@@ -4,12 +4,15 @@ import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Searchbar from "./components/Searchbar/searchbar.js";
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav>
+          <Searchbar />
+        </Nav>
         <Switch>
           <Route exact path={["/", "/home"]}>
             <Home />

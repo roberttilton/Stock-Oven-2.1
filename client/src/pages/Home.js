@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import API from "../utils/API";
+import { List, ListItem } from "../components/List";
 
 function Home() {
   const [reddit, setReddit] = useState({
@@ -11,6 +12,11 @@ function Home() {
     "Daily Discussion": [],
     "Chart": []
   });
+
+  const [redditChoice, setRedditChoice] = useState([]);
+  const [redditColor, setRedditColor] = useState({
+    backgroundColor: ""
+  })
 
   useEffect(() => {
     getReddit();
@@ -62,118 +68,144 @@ function Home() {
       });
   };
 
+function handleInputBtn(event) {
+  const value = event.target.value;
+  setRedditChoice(reddit[value]);
+  if (value === "DD") {
+    setRedditColor({backgroundColor: "green"});
+  }
+  if (value === "Gain") {
+    setRedditColor({backgroundColor: "yellow"});
+  }
+  if (value === "Loss") {
+    setRedditColor({backgroundColor: "red"});
+  }
+  if (value === "News") {
+    setRedditColor({backgroundColor: "purple"});
+  }
+  if (value === "YOLO") {
+    setRedditColor({backgroundColor: "blue"});
+  }
+  if (value === "Daily Discussion") {
+    setRedditColor({backgroundColor: "pink"});
+  }
+  if (value === "Chart") {
+    setRedditColor({backgroundColor: "brown"});
+  }
+};
+
   return (
     <div className="tile is-parent is-7">
 				<div className="tile notification is-danger" id="reddit-container">
 					<div className="sort-buttons">
-						<button className="sort-button" id="reddit-dd" type="button" style={{backgroundColor: "#365b8c"}} data-tip="Due Diligence">DD</button>
-						<button className="sort-button" id="reddit-gain" type="button" style={{backgroundColor: "green"}} data-tip="Reported gains">Gain</button>
-						<button className="sort-button" id="reddit-loss" type="button" style={{backgroundColor: "crimson"}} data-tip="Reported losses">Loss</button>
-						<button className="sort-button" id="reddit-news" type="button" style={{backgroundColor: "goldenrod"}} data-tip="Market news">News</button>
-						<button className="sort-button" id="reddit-yolo" type="button" style={{backgroundColor: "cadetblue"}} data-tip="Risky positions">YOLO</button>
-						<button className="sort-button" id="reddit-discussion" type="button" style={{backgroundColor: "#b43fc4"}} data-tip="Discussion">Discussion</button>
-						<button className="sort-button" id="reddit-chart" type="button" style={{backgroundColor: "orangered"}} data-tip="Chart">Chart</button>
+						<input className="sort-button" id="reddit-dd" onClick={handleInputBtn} type="button" style={{backgroundColor: "#365b8c"}} value="DD" data-tip="Due Diligence" />
+						<input className="sort-button" id="reddit-gain" onClick={handleInputBtn} type="button" style={{backgroundColor: "green"}} value="Gain" data-tip="Reported gains" />
+						<input className="sort-button" id="reddit-loss" onClick={handleInputBtn} type="button" style={{backgroundColor: "crimson"}} value="Loss" data-tip="Reported losses" />
+						<input className="sort-button" id="reddit-news" onClick={handleInputBtn} type="button" style={{backgroundColor: "goldenrod"}} value="News" data-tip="Market news" />
+						<input className="sort-button" id="reddit-yolo" onClick={handleInputBtn} type="button" style={{backgroundColor: "cadetblue"}} value="YOLO" data-tip="Risky positions" />
+						<input className="sort-button" id="reddit-discussion" onClick={handleInputBtn} type="button" style={{backgroundColor: "#b43fc4"}} value="Daily Discussion" data-tip="Discussion" />
+						<input className="sort-button" id="reddit-chart" onClick={handleInputBtn} type="button" style={{backgroundColor: "orangered"}} value="Chart" data-tip="Chart" />
 					</div>
 					<div id="reddit">
 						<div className="no-reddit tooltip"></div>
-            {reddit.DD.length ? (
-              <ul>
-                {reddit.DD.map((post) => (
-                  <li>
+            {redditChoice.length ? (
+              <List>
+                {redditChoice.map((post) => (
+                  <ListItem style={redditColor}>
                         <p>{post.title}</p>
                         <p>{post.author}</p>
                         <p>{post.score}</p>
                         <p>{post.link}</p>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             ) : (
               <h3>No Results to Display</h3>
             )}
-            {reddit.Gain.length ? (
-              <ul>
+            {/* {reddit.Gain.length ? (
+              <List>
                 {reddit.Gain.map((post) => (
-                  <li>
+                  <ListItem color="blue">
                         <p>{post.title}</p>
                         <p>{post.author}</p>
                         <p>{post.score}</p>
                         <p>{post.link}</p>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             ) : (
               <h3>No Results to Display</h3>
             )}
             {reddit.Loss.length ? (
-              <ul>
+              <List>
                 {reddit.Loss.map((post) => (
-                  <li>
+                  <ListItem>
                         <p>{post.title}</p>
                         <p>{post.author}</p>
                         <p>{post.score}</p>
                         <p>{post.link}</p>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             ) : (
               <h3>No Results to Display</h3>
             )}
             {reddit.News.length ? (
-              <ul>
+              <List>
                 {reddit.News.map((post) => (
-                  <li>
+                  <ListItem>
                         <p>{post.title}</p>
                         <p>{post.author}</p>
                         <p>{post.score}</p>
                         <p>{post.link}</p>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             ) : (
               <h3>No Results to Display</h3>
             )}
             {reddit.YOLO.length ? (
-              <ul>
+              <List>
                 {reddit.YOLO.map((post) => (
-                  <li>
+                  <ListItem>
                         <p>{post.title}</p>
                         <p>{post.author}</p>
                         <p>{post.score}</p>
                         <p>{post.link}</p>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             ) : (
               <h3>No Results to Display</h3>
             )}
             {reddit["Daily Discussion"].length ? (
-              <ul>
+              <List>
               {reddit["Daily Discussion"].map((post) => (
-                <li>
+                <ListItem>
                       <p>{post.title}</p>
                       <p>{post.author}</p>
                       <p>{post.score}</p>
                       <p>{post.link}</p>
-                </li>
+                </ListItem>
               ))}
-            </ul>
+            </List>
           ) : (
             <h3>No Results to Display</h3>
           )}
             {reddit.Chart.length ? (
-              <ul>
+              <List>
                 {reddit.Chart.map((post) => (
-                  <li>
+                  <ListItem>
                         <p>{post.title}</p>
                         <p>{post.author}</p>
                         <p>{post.score}</p>
                         <p>{post.link}</p>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             ) : (
               <h3>No Results to Display</h3>
-            )}
+            )} */}
 					</div>
 				</div>
 			</div>

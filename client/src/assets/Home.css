@@ -1,0 +1,8 @@
+#reddit-container {
+  grid-area: reddit;
+	display: grid;
+	grid-template-rows: 3em auto;
+	background-color: crimson;
+	align-items: center;
+	justify-content: stretch;
+  }

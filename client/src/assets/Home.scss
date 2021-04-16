@@ -1,0 +1,29 @@
+#reddit-container {
+	grid-area: reddit;
+	display: grid;
+	grid-template-rows: 3em auto;
+	background-color: crimson;
+	align-items: center;
+	justify-content: stretch;
+
+	.navigation {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		.flair-button {
+			font-size: medium;
+			border-radius: 15px;
+			background-color: antiquewhite;
+			border: none;
+			box-shadow: 0 0 5px #a1978a;
+			width: fit-content;
+			padding: 6px 10px;
+			color: honeydew;
+		}
+	}
+
+	.viewport {
+		justify-self: center;
+	}
+}

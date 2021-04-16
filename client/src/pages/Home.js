@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
+import "../assets/Home.css";
 
 function Home() {
   const [reddit, setReddit] = useState({
@@ -115,7 +116,7 @@ function handleInputBtn(event) {
                         <p>{post.title}</p>
                         <p>{post.author}</p>
                         <p>{post.score}</p>
-                        <p>{post.link}</p>
+                        <p><a href={"https://www.reddit.com"+post.link} target="_blank">Direct Link</a></p>
                   </ListItem>
                 ))}
               </List>

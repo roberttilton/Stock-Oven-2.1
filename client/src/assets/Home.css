@@ -1,8 +1,8 @@
 #reddit-container {
   grid-area: reddit;
-	display: grid;
-	grid-template-rows: 3em auto;
-	background-color: crimson;
-	align-items: center;
-	justify-content: stretch;
+  background-color: #282c34;
+  color: white;
+  padding: 15px;
+  font-family: Arial;
+  text-align: center;
   }

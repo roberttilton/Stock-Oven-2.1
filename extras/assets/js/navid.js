@@ -5,7 +5,6 @@ var currentRange = localStorage.getItem("range") || "r-5d";
 var currentInterval = localStorage.getItem("interval") || "i-60m";
 var stockInput = "";
 
-
 /**
  * Grab every x points (determined by 'interval') over a time 'range' and plot them with ApexCharts
  * @param {string} range the range over which to graph the stock shifts for

@@ -1,8 +1,26 @@
-const router = require("express").Router();
-const userController = require("../../controllers/userController");
+const signupFormHandler = async function (event) {
+  event.preventDefault();
 
-// Matches with "/api/signup"
-router.route("/")
-  .post(userController.create);
+  const usernameEl = document.querySelector('#username');
+  const passwordEl = document.querySelector('#password');
 
-module.exports = router;
+
+  const response = await fetch('/api/user/signup', {
+    method: 'POST',
+    body: JSON.stringify({
+      username: usernameEl.value,
+      password: passwordEl.value,
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Failed to sign up');
+  }
+};
+
+document.querySelector('#signup-form').addEventListener('click', signupFormHandler);

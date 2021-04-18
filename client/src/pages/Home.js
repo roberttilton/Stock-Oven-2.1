@@ -76,25 +76,25 @@ function Home() {
     const value = event.target.value;
     setRedditChoice(reddit[value]);
     if (value === "DD") {
-      setRedditColor({ backgroundColor: "green" });
+      setRedditColor({ backgroundColor: "#365b8c" });
     }
     if (value === "Gain") {
-      setRedditColor({ backgroundColor: "yellow" });
+      setRedditColor({ backgroundColor: "green" });
     }
     if (value === "Loss") {
-      setRedditColor({ backgroundColor: "red" });
+      setRedditColor({ backgroundColor: "crimson" });
     }
     if (value === "News") {
-      setRedditColor({ backgroundColor: "purple" });
+      setRedditColor({ backgroundColor: "goldenrod" });
     }
     if (value === "YOLO") {
-      setRedditColor({ backgroundColor: "blue" });
+      setRedditColor({ backgroundColor: "cadetblue" });
     }
     if (value === "Daily Discussion") {
-      setRedditColor({ backgroundColor: "pink" });
+      setRedditColor({ backgroundColor: "#b43fc4" });
     }
     if (value === "Chart") {
-      setRedditColor({ backgroundColor: "brown" });
+      setRedditColor({ backgroundColor: "orangered" });
     }
   };
 
@@ -146,7 +146,10 @@ function Home() {
           ) : (
             <h3>No Results to Display</h3>
           )}
-          <Autocomplete
+        </div>
+      </div>
+      <div className="stock-select-demo">
+      <Autocomplete
             id="stock-select-demo"
             style={{ width: 300 }}
             options={stocks}
@@ -173,92 +176,7 @@ function Home() {
               />
             )}
           />
-          {/* {reddit.Gain.length ? (
-              <List>
-                {reddit.Gain.map((post) => (
-                  <ListItem color="blue">
-                        <p>{post.title}</p>
-                        <p>{post.author}</p>
-                        <p>{post.score}</p>
-                        <p>{post.link}</p>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-            {reddit.Loss.length ? (
-              <List>
-                {reddit.Loss.map((post) => (
-                  <ListItem>
-                        <p>{post.title}</p>
-                        <p>{post.author}</p>
-                        <p>{post.score}</p>
-                        <p>{post.link}</p>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-            {reddit.News.length ? (
-              <List>
-                {reddit.News.map((post) => (
-                  <ListItem>
-                        <p>{post.title}</p>
-                        <p>{post.author}</p>
-                        <p>{post.score}</p>
-                        <p>{post.link}</p>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-            {reddit.YOLO.length ? (
-              <List>
-                {reddit.YOLO.map((post) => (
-                  <ListItem>
-                        <p>{post.title}</p>
-                        <p>{post.author}</p>
-                        <p>{post.score}</p>
-                        <p>{post.link}</p>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-            {reddit["Daily Discussion"].length ? (
-              <List>
-              {reddit["Daily Discussion"].map((post) => (
-                <ListItem>
-                      <p>{post.title}</p>
-                      <p>{post.author}</p>
-                      <p>{post.score}</p>
-                      <p>{post.link}</p>
-                </ListItem>
-              ))}
-            </List>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
-            {reddit.Chart.length ? (
-              <List>
-                {reddit.Chart.map((post) => (
-                  <ListItem>
-                        <p>{post.title}</p>
-                        <p>{post.author}</p>
-                        <p>{post.score}</p>
-                        <p>{post.link}</p>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )} */}
-        </div>
-      </div>
+          </div>
     </div>
   );
 }

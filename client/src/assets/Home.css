@@ -6,3 +6,15 @@
   font-family: Arial;
   text-align: center;
   }
+
+.sort-button {
+  border-radius: 8px;
+}
+
+#stock-select-demo {
+  justify-content: flex-end;
+}
+
+.list-overflow-container {
+  color: black;
+}

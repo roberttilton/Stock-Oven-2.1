@@ -12,9 +12,9 @@
 }
 
 /* isiah search bar text color */
-/* #stock-select-demo {
-  color:red;
-} */
+#stock-select-demo {
+  color: white;
+}
 
 .stock-select-demo {
   background-color: #282c34;

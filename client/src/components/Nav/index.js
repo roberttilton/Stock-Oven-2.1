@@ -12,13 +12,12 @@ function Nav() {
       <Link className="nav-link" to="/home">
         Home
       </Link>
-
       <Link className="nav-link" to="/detail">
         Detail
       </Link>
-      
     </nav>
   );
 }
+
 
 export default Nav;

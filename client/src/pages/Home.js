@@ -177,6 +177,7 @@ function Home() {
             )}
           />
           </div>
+          <div id="whitespaceremove"></div>
     </div>
   );
 }

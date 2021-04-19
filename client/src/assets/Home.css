@@ -11,10 +11,28 @@
   border-radius: 8px;
 }
 
-#stock-select-demo {
-  justify-content: flex-end;
-}
+/* isiah search bar text color */
+/* #stock-select-demo {
+  color:red;
+} */
 
+.stock-select-demo {
+  background-color: #282c34;
+  color: white;
+  padding: 15px;
+  font-family: Arial;
+  text-align: center;
+}
 .list-overflow-container {
   color: black;
+}
+
+/* navbar links */
+.nav-link {
+  color: black;
+}
+
+#logo {
+  height: 3em;
+	align-self: center;
 }
